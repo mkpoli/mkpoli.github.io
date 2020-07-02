@@ -1,6 +1,11 @@
 #kana-container {
     font-size: 25em;
-    font-family: "UniHentaiKana","IPAmjMincho","HanaMinA","WadaLabChuMaruGo2004Emoji","WadaLabMaruGo2004Emoji";
+    font-family: "SamMinH", "UniHentaiKana","IPAmjMincho","HanaMinA", "HentaiKanaW","WadaLabChuMaruGo2004Emoji","WadaLabMaruGo2004Emoji";
+}
+
+@font-face {
+    font-family: HentaiKanaW;
+    src: url("UniHentaiKana-Regular.woff");
 }
 
 body {
