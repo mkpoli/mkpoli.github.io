@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>かな練習</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    
+</head>
+<body>
+    <div id="kana-container"><span></span></div>
+    <button onclick="displayKana()">Next</button>
+    <button onclick="displayAnsw()">Answer</button>
+    
+    <div class="side-bar">
+        <div id="gojuon"></div>
+    </div>
+
+    <div class="prompt" id="correct">⭕️</div><audio src="correct.mp3" id="correct-sound" preload="auto"></audio>
+    <div class="prompt" id="wrong">❌</div><audio src="wrong.mp3" id="wrong-sound" preload="auto" ></audio>
+
+
+    <div id="switchArea">
+        <input type="checkbox" id="switch1">
+        <label for="switch1"><span></span></label>
+        <div id="swImg"></div>
+    </div>
+    
+    <script src='main.js'></script>
+</body>
+</html>

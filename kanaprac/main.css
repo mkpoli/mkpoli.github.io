@@ -1,0 +1,63 @@
+#kana-container {
+    font-size: 25em;
+    font-family: "UniHentaiKana","IPAmjMincho","HanaMinA","WadaLabChuMaruGo2004Emoji","WadaLabMaruGo2004Emoji";
+}
+
+body {
+    user-select: none;
+}
+
+button {
+    font-size: 1.5em;
+    font-family: "Noto Sans CJK JP";
+    margin: 0.1em 0.1em;
+    /* height: 1.5em; */
+    display: inline-block;
+    background-color: #fff;
+    padding: 0.4em 0.7em;
+    border: 1px solid #444;
+    border-radius: 4px;
+    vertical-align: top;
+}
+
+button:hover {
+    background-color: #fdf;
+    border-color: #e0e;
+}
+
+button:focus {
+    outline: none;
+    /* background-color: #f9f; */
+    /* border-color: #e0e; */
+}
+
+.side-bar {
+    position: absolute;
+    max-width: 450px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0.5rem;
+}
+
+.prompt {
+    font-size: 500px;
+    position: fixed;
+    display: none;
+    /* background-color: #000; */
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.prompt.visible {
+    display: block;
+}
+
+button.correct {
+    background-color: #fdf;
+    border-color: #e0e;
+}
