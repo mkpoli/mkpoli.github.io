@@ -1,9 +1,5 @@
-const MAX = 0x1B0FF
 const MIN = 0x1B002
-
-// function generateKana() {
-//     return Math.random() * (MAX - MIN) + MIN
-// }
+const MAX = 0x1B11E
 
 const KANA_TABLE = {
     "\u{1B000}": "e",
@@ -295,6 +291,294 @@ const KANA_TABLE = {
     "\u{1B11E}": "n-mu-mo",
 }
 
+JIBO_TABLE = {
+    "\u{1B002}": "安",
+    "\u{1B003}": "愛",
+    "\u{1B004}": "阿",
+    "\u{1B005}": "惡",
+    "\u{1B006}": "以",
+    "\u{1B007}": "伊",
+    "\u{1B008}": "意",
+    "\u{1B009}": "移",
+    "\u{1B00A}": "宇",
+    "\u{1B00B}": "宇",
+    "\u{1B00C}": "憂",
+    "\u{1B00D}": "有",
+    "\u{1B00E}": "雲",
+    "\u{1B00F}": "盈",
+    "\u{1B010}": "縁",
+    "\u{1B011}": "衣",
+    "\u{1B012}": "衣",
+    "\u{1B013}": "要",
+    "\u{1B014}": "於",
+    "\u{1B015}": "於",
+    "\u{1B016}": "隱",
+    "\u{1B017}": "佳",
+    "\u{1B018}": "加",
+    "\u{1B019}": "可",
+    "\u{1B01A}": "可",
+    "\u{1B01B}": "嘉",
+    "\u{1B01C}": "我",
+    "\u{1B01D}": "歟",
+    "\u{1B01E}": "賀",
+    "\u{1B01F}": "閑",
+    "\u{1B020}": "香",
+    "\u{1B021}": "駕",
+    "\u{1B022}": "家",
+    "\u{1B023}": "喜",
+    "\u{1B024}": "幾",
+    "\u{1B025}": "幾",
+    "\u{1B026}": "支",
+    "\u{1B027}": "木",
+    "\u{1B028}": "祈",
+    "\u{1B029}": "貴",
+    "\u{1B02A}": "起",
+    "\u{1B02B}": "久",
+    "\u{1B02C}": "久",
+    "\u{1B02D}": "九",
+    "\u{1B02E}": "供",
+    "\u{1B02F}": "倶",
+    "\u{1B030}": "具",
+    "\u{1B031}": "求",
+    "\u{1B032}": "介",
+    "\u{1B033}": "介",
+    "\u{1B034}": "希",
+    "\u{1B035}": "氣",
+    "\u{1B036}": "計",
+    "\u{1B037}": "遣",
+    "\u{1B038}": "古",
+    "\u{1B039}": "故",
+    "\u{1B03A}": "許",
+    "\u{1B03B}": "期",
+    "\u{1B03C}": "乍",
+    "\u{1B03D}": "佐",
+    "\u{1B03E}": "佐",
+    "\u{1B03F}": "左",
+    "\u{1B040}": "差",
+    "\u{1B041}": "散",
+    "\u{1B042}": "斜",
+    "\u{1B043}": "沙",
+    "\u{1B044}": "之",
+    "\u{1B045}": "之",
+    "\u{1B046}": "事",
+    "\u{1B047}": "四",
+    "\u{1B048}": "志",
+    "\u{1B049}": "新",
+    "\u{1B04A}": "受",
+    "\u{1B04B}": "壽",
+    "\u{1B04C}": "數",
+    "\u{1B04D}": "數",
+    "\u{1B04E}": "春",
+    "\u{1B04F}": "春",
+    "\u{1B050}": "須",
+    "\u{1B051}": "須",
+    "\u{1B052}": "世",
+    "\u{1B053}": "世",
+    "\u{1B054}": "世",
+    "\u{1B055}": "勢",
+    "\u{1B056}": "聲",
+    "\u{1B057}": "所",
+    "\u{1B058}": "所",
+    "\u{1B059}": "曾",
+    "\u{1B05A}": "曾",
+    "\u{1B05B}": "楚",
+    "\u{1B05C}": "蘇",
+    "\u{1B05D}": "處",
+    "\u{1B05E}": "堂",
+    "\u{1B05F}": "多",
+    "\u{1B060}": "多",
+    "\u{1B061}": "當",
+    "\u{1B062}": "千",
+    "\u{1B063}": "地",
+    "\u{1B064}": "智",
+    "\u{1B065}": "知",
+    "\u{1B066}": "知",
+    "\u{1B067}": "致",
+    "\u{1B068}": "遲",
+    "\u{1B069}": "川",
+    "\u{1B06A}": "川",
+    "\u{1B06B}": "津",
+    "\u{1B06C}": "都",
+    "\u{1B06D}": "徒",
+    "\u{1B06E}": "亭",
+    "\u{1B06F}": "低",
+    "\u{1B070}": "傳",
+    "\u{1B071}": "天",
+    "\u{1B072}": "天",
+    "\u{1B073}": "天",
+    "\u{1B074}": "帝",
+    "\u{1B075}": "弖",
+    "\u{1B076}": "轉",
+    "\u{1B077}": "土",
+    "\u{1B078}": "度",
+    "\u{1B079}": "東",
+    "\u{1B07A}": "登",
+    "\u{1B07B}": "登",
+    "\u{1B07C}": "砥",
+    "\u{1B07D}": "等",
+    "\u{1B07E}": "南",
+    "\u{1B07F}": "名",
+    "\u{1B080}": "奈",
+    "\u{1B081}": "奈",
+    "\u{1B082}": "奈",
+    "\u{1B083}": "菜",
+    "\u{1B084}": "那",
+    "\u{1B085}": "那",
+    "\u{1B086}": "難",
+    "\u{1B087}": "丹",
+    "\u{1B088}": "二",
+    "\u{1B089}": "仁",
+    "\u{1B08A}": "兒",
+    "\u{1B08B}": "爾",
+    "\u{1B08C}": "爾",
+    "\u{1B08D}": "耳",
+    "\u{1B08E}": "而",
+    "\u{1B08F}": "努",
+    "\u{1B090}": "奴",
+    "\u{1B091}": "怒",
+    "\u{1B092}": "年",
+    "\u{1B093}": "年",
+    "\u{1B094}": "年",
+    "\u{1B095}": "根",
+    "\u{1B096}": "熱",
+    "\u{1B097}": "禰",
+    "\u{1B098}": "子",
+    "\u{1B099}": "乃",
+    "\u{1B09A}": "濃",
+    "\u{1B09B}": "能",
+    "\u{1B09C}": "能",
+    "\u{1B09D}": "農",
+    "\u{1B09E}": "八",
+    "\u{1B09F}": "半",
+    "\u{1B0A0}": "婆",
+    "\u{1B0A1}": "波",
+    "\u{1B0A2}": "盤",
+    "\u{1B0A3}": "盤",
+    "\u{1B0A4}": "破",
+    "\u{1B0A5}": "者",
+    "\u{1B0A6}": "者",
+    "\u{1B0A7}": "葉",
+    "\u{1B0A8}": "頗",
+    "\u{1B0A9}": "悲",
+    "\u{1B0AA}": "日",
+    "\u{1B0AB}": "比",
+    "\u{1B0AC}": "避",
+    "\u{1B0AD}": "非",
+    "\u{1B0AE}": "飛",
+    "\u{1B0AF}": "飛",
+    "\u{1B0B0}": "不",
+    "\u{1B0B1}": "婦",
+    "\u{1B0B2}": "布",
+    "\u{1B0B3}": "倍",
+    "\u{1B0B4}": "弊",
+    "\u{1B0B5}": "弊",
+    "\u{1B0B6}": "遍",
+    "\u{1B0B7}": "邊",
+    "\u{1B0B8}": "邊",
+    "\u{1B0B9}": "部",
+    "\u{1B0BA}": "保",
+    "\u{1B0BB}": "保",
+    "\u{1B0BC}": "報",
+    "\u{1B0BD}": "奉",
+    "\u{1B0BE}": "寶",
+    "\u{1B0BF}": "本",
+    "\u{1B0C0}": "本",
+    "\u{1B0C1}": "豐",
+    "\u{1B0C2}": "万",
+    "\u{1B0C3}": "末",
+    "\u{1B0C4}": "末",
+    "\u{1B0C5}": "滿",
+    "\u{1B0C6}": "滿",
+    "\u{1B0C7}": "萬",
+    "\u{1B0C8}": "麻",
+    "\u{1B0C9}": "三",
+    "\u{1B0CA}": "微",
+    "\u{1B0CB}": "美",
+    "\u{1B0CC}": "美",
+    "\u{1B0CD}": "美",
+    "\u{1B0CE}": "見",
+    "\u{1B0CF}": "身",
+    "\u{1B0D0}": "武",
+    "\u{1B0D1}": "無",
+    "\u{1B0D2}": "牟",
+    "\u{1B0D3}": "舞",
+    "\u{1B0D4}": "免",
+    "\u{1B0D5}": "面",
+    "\u{1B0D6}": "馬",
+    "\u{1B0D7}": "母",
+    "\u{1B0D8}": "毛",
+    "\u{1B0D9}": "毛",
+    "\u{1B0DA}": "毛",
+    "\u{1B0DB}": "茂",
+    "\u{1B0DC}": "裳",
+    "\u{1B0DD}": "也",
+    "\u{1B0DE}": "也",
+    "\u{1B0DF}": "屋",
+    "\u{1B0E0}": "耶",
+    "\u{1B0E1}": "耶",
+    "\u{1B0E2}": "夜",
+    "\u{1B0E3}": "游",
+    "\u{1B0E4}": "由",
+    "\u{1B0E5}": "由",
+    "\u{1B0E6}": "遊",
+    "\u{1B0E7}": "代",
+    "\u{1B0E8}": "余",
+    "\u{1B0E9}": "與",
+    "\u{1B0EA}": "與",
+    "\u{1B0EB}": "與",
+    "\u{1B0EC}": "餘",
+    "\u{1B0ED}": "羅",
+    "\u{1B0EE}": "良",
+    "\u{1B0EF}": "良",
+    "\u{1B0F0}": "良",
+    "\u{1B0F1}": "利",
+    "\u{1B0F2}": "利",
+    "\u{1B0F3}": "李",
+    "\u{1B0F4}": "梨",
+    "\u{1B0F5}": "理",
+    "\u{1B0F6}": "里",
+    "\u{1B0F7}": "離",
+    "\u{1B0F8}": "流",
+    "\u{1B0F9}": "留",
+    "\u{1B0FA}": "留",
+    "\u{1B0FB}": "留",
+    "\u{1B0FC}": "累",
+    "\u{1B0FD}": "類",
+    "\u{1B0FE}": "禮",
+    "\u{1B0FF}": "禮",
+    "\u{1B100}": "連",
+    "\u{1B101}": "麗",
+    "\u{1B102}": "呂",
+    "\u{1B103}": "呂",
+    "\u{1B104}": "婁",
+    "\u{1B105}": "樓",
+    "\u{1B106}": "路",
+    "\u{1B107}": "露",
+    "\u{1B108}": "倭",
+    "\u{1B109}": "和",
+    "\u{1B10A}": "和",
+    "\u{1B10B}": "王",
+    "\u{1B10C}": "王",
+    "\u{1B10D}": "井",
+    "\u{1B10E}": "井",
+    "\u{1B10F}": "居",
+    "\u{1B110}": "爲",
+    "\u{1B111}": "遺",
+    "\u{1B112}": "惠",
+    "\u{1B113}": "衞",
+    "\u{1B114}": "衞",
+    "\u{1B115}": "衞",
+    "\u{1B116}": "乎",
+    "\u{1B117}": "乎",
+    "\u{1B118}": "尾",
+    "\u{1B119}": "緒",
+    "\u{1B11A}": "越",
+    "\u{1B11B}": "遠",
+    "\u{1B11C}": "遠",
+    "\u{1B11D}": "无",
+    "\u{1B11E}": "无",
+}
+
 GOJUON = [
     "あ", "い", "う", "え", "お",
     "か", "き", "く", "け", "こ",
@@ -308,16 +592,16 @@ GOJUON = [
     // "ば", "び", "ぶ", "べ", "ぼ",
     // "ぱ", "ぴ", "ぷ", "ぺ", "ぽ",
     "ま", "み", "む", "め", "も",
-    "や", "○", "ゆ", "○", "よ",
+    "や", "　", "ゆ", "　", "よ",
     "ら", "り", "る", "れ", "ろ",
-    "わ", "ゐ", "○", "ゑ", "を"
+    "わ", "ゐ", "　", "ゑ", "を"
 ]
 
 GOJUON_TABLE = {
     "あ": "a",  "い": "i",  "う": "u",  "え": "e",  "お": "o",
     "か": "ka", "き": "ki", "く": "ku", "け": "ke", "こ": "ko",
     // "が": "ga", "ぎ": "", "ぐ": "", "げ": "", "ご": "",
-    "さ": "sa", "し": "sa", "す": "su", "せ": "se", "そ": "so",
+    "さ": "sa", "し": "si", "す": "su", "せ": "se", "そ": "so",
     // "ざ": "za", "じ": "", "ず": "", "ぜ": "", "ぞ": "",
     "た": "ta", "ち": "ti", "つ": "tu", "て": "te", "と": "to",
     // "だ": "da", "ぢ": "", "づ": "", "で": "", "ど": "",
@@ -325,10 +609,10 @@ GOJUON_TABLE = {
     "は": "ha", "ひ": "hi", "ふ": "hu", "へ": "he", "ほ": "ho",
     // "ば": "ba", "び": "", "ぶ": "", "べ": "", "ぼ": "",
     // "ぱ": "pa", "ぴ": "", "ぷ": "", "ぺ": "", "ぽ": "",
-    "ま": "ma", "み": "mi", "む": "u", "め": "me", "も": "mo",
-    "や": "ya", "○": "",   "ゆ": "u", "○": "", "よ": "yo",
-    "ら": "ra", "り": "ri", "る": "u", "れ": "re", "ろ": "ro",
-    "わ": "wa", "ゐ": "wi", "○": "", "ゑ": "we", "を": "wo"
+    "ま": "ma", "み": "mi", "む": "mu", "め": "me", "も": "mo",
+    "や": "ya", "　": "",   "ゆ": "yu", "　": "",  "よ": "yo",
+    "ら": "ra", "り": "ri", "る": "ru", "れ": "re", "ろ": "ro",
+    "わ": "wa", "ゐ": "wi", "　": "",  "ゑ": "we", "を": "wo"
 }
 
 
@@ -338,9 +622,12 @@ function displayKana() {
     kanaContainer.innerText = kana
     //  + `(${KANA_TABLE[kana]})`
     currentHentai = kana
+    available = true
 }
 
 function displayAnsw() {
+    available = false
+    jibo.innerText = JIBO_TABLE[currentHentai]
     KANA_TABLE[currentHentai].split("-").forEach((x) => {
         const correct_button = document.getElementById(`kana_${x}`)
 
@@ -350,12 +637,19 @@ function displayAnsw() {
                 correct_button.classList.remove("correct")
             }, 200)
         }, 400)
-        setTimeout(() => clearInterval(timer), 2000)
+        setTimeout(() => {
+            clearInterval(timer)
+            jibo.innerText = ""
+        }, 2000)
     })
     setTimeout(displayKana, 2000)
 }
 
-currentHentai = ""
+function check(hentai, kana) {
+    return KANA_TABLE[hentai].split("-").includes(kana)
+}
+
+var currentHentai = ""
 
 const correct_sound = document.getElementById("correct-sound")
 const wrong_sound = document.getElementById("wrong-sound")
@@ -363,33 +657,69 @@ const wrong_sound = document.getElementById("wrong-sound")
 const correct_promt = document.getElementById("correct")
 const wrong_prompt = document.getElementById("wrong")
 
+const jibo = document.getElementById("jibo")
+
 const gojunon = document.getElementById("gojuon")
+
+const counter_area = document.getElementById("counter-area")
+
+const correct_counter = document.getElementById("correct-counter")
+const wrong_counter = document.getElementById("wrong-counter")
+
+var correctCount = 0
+var wrongCount = 0
+
+const wrong_list = document.getElementById("wrong-list")
+const wrong_list_container = document.getElementById("wrong-list-container")
+
+var available = true
+
+const sound_switch = document.getElementById("sound-switch")
+
 GOJUON.forEach((kana, index) => {
     const button = document.createElement("button")
     button.id = `kana_${GOJUON_TABLE[kana]}`
     button.innerText = kana
-    button.addEventListener("click", () => {
-        // console.log(kana)
-        if (check(currentHentai, GOJUON_TABLE[kana])) {
-            correct_sound.play()
-            correct_promt.classList.add("visible")
-            setTimeout(() => correct_promt.classList.remove("visible"), 700)
-            setTimeout(displayKana, 700)
-        } else {
-            wrong_sound.play()
-            wrong_prompt.classList.add("visible")
-            setTimeout(() => wrong_prompt.classList.remove("visible"), 700)
-        }
-        // console.log("lol")
-    })
+    if (kana == "　") 
+        button.classList.add("disabled")
+    else
+        button.addEventListener("click", () => {
+            if (!available)
+                return
+            // console.log(kana)
+            if (check(currentHentai, GOJUON_TABLE[kana])) {
+                correctCount += 1
+                correct_counter.innerText = correctCount
+                if (sound_switch.checked)
+                    correct_sound.play()
+                correct_promt.classList.add("visible")
+                setTimeout(() => correct_promt.classList.remove("visible"), 700)
+                setTimeout(displayKana, 700)
+            } else {
+                wrongCount += 1
+                wrong_counter.innerText = wrongCount
+                if (sound_switch.checked)
+                    wrong_sound.play()
+                wrong_prompt.classList.add("visible")
+                setTimeout(() => wrong_prompt.classList.remove("visible"), 700)
+
+                const wrong_item = document.createElement("li")
+                wrong_item.innerHTML = `<span class="hentai-font">${currentHentai}</span>: ❌${kana}`
+                wrong_list.appendChild(wrong_item)
+            }
+        })
     gojunon.appendChild(button)
     if (index % 5 == 4) {
         gojunon.appendChild(document.createElement("br"))
     }
 })
 
-displayKana()
+counter_area.addEventListener("mouseover", () => {
+    wrong_list_container.classList.add("visible")
+})
 
-function check(hentai, kana) {
-    return KANA_TABLE[hentai].split("-").includes(kana)
-}
+counter_area.addEventListener("mouseleave", () => {
+    wrong_list_container.classList.remove("visible")
+})
+
+displayKana()

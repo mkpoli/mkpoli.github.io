@@ -9,24 +9,39 @@
     
 </head>
 <body>
-    <div id="kana-container"><span></span></div>
+    <div id="kana-container" class="hentai-font"></div>
+    <div id="jibo"></div>
+
+    <br>
+
     <button onclick="displayKana()">Next</button>
     <button onclick="displayAnsw()">Answer</button>
-    
-    <div class="side-bar">
-        <div id="gojuon"></div>
+    <div id="counter-area">
+        <span>Wrong: <span id="wrong-counter">0</span></span>
+        <span>Correct: <span id="correct-counter">0</span></span>
     </div>
 
-    <div class="prompt" id="correct">⭕️</div><audio src="correct.mp3" id="correct-sound" preload="auto"></audio>
-    <div class="prompt" id="wrong">❌</div><audio src="wrong.mp3" id="wrong-sound" preload="auto" ></audio>
+    <input type="checkbox" id="sound-switch" checked>
+    <label for="sound-switch">SFX ON/OFF    </label>
 
+    <div id="wrong-list-container">
+        <ul id="wrong-list"></ul>
+    </div>
 
-    <div id="switchArea">
+    <!-- <div id="switch-container">
         <input type="checkbox" id="switch1">
         <label for="switch1"><span></span></label>
         <div id="swImg"></div>
     </div>
+     -->
+
+    <div class="side-bar">
+        <div id="gojuon"></div>
+    </div>
     
+    <div class="prompt" id="correct">⭕️</div><audio src="correct.mp3" id="correct-sound" preload="auto"></audio>
+    <div class="prompt" id="wrong">❌</div><audio src="wrong.mp3" id="wrong-sound" preload="auto" ></audio>
+
     <script src='main.js'></script>
 </body>
 </html>

@@ -1,6 +1,16 @@
 #kana-container {
     font-size: 25em;
+    display: inline-block;
+}
+
+.hentai-font {
     font-family: "SamMinH", "UniHentaiKana","IPAmjMincho","HanaMinA", "HentaiKanaW","WadaLabChuMaruGo2004Emoji","WadaLabMaruGo2004Emoji";
+}
+
+#jibo {
+    display: inline-block;
+    font-size: 15em;
+    font-family: "方正楷体_GBK", serif;
 }
 
 @font-face {
@@ -9,6 +19,7 @@
 }
 
 body {
+    /* font-size: 1.5em; */
     user-select: none;
 }
 
@@ -36,6 +47,16 @@ button:focus {
     /* border-color: #e0e; */
 }
 
+button.correct {
+    background-color: #fdf;
+    border-color: #e0e;
+}
+
+button.disabled:hover {
+    background-color: #fff;
+    border: 1px solid #444;
+}
+
 .side-bar {
     position: absolute;
     max-width: 450px;
@@ -48,7 +69,7 @@ button:focus {
 }
 
 .prompt {
-    font-size: 500px;
+    font-size: 25em;
     position: fixed;
     display: none;
     /* background-color: #000; */
@@ -58,11 +79,16 @@ button:focus {
     transform: translate(-50%, -50%);
 }
 
-.prompt.visible {
+.prompt.visible, #wrong-list-container.visible {
     display: block;
 }
 
-button.correct {
-    background-color: #fdf;
-    border-color: #e0e;
+#wrong-list-container {
+    display: none;
+}
+
+#counter-area {
+    display: inline-block;
+    font-size: 1.5em;
+    padding: 0.4em 0.7em;
 }
